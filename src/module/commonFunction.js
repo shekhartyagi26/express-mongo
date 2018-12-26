@@ -9,7 +9,7 @@ exports.generateRandomString = () => {
     let text = "";
     let possible = "123456789";
     for (var i = 0; i < 4; i++) text += possible.charAt(Math.floor(Math.random() * possible.length));
-    
+
     return text;
 };
 
@@ -55,7 +55,7 @@ const validateEmail = (email) => {
     return pattern.test(email);
 }
 
-exports.sendmail = function(email_id, html) {
+exports.sendmail = function (email_id, html) {
     console.log({ email_id, html })
     var config = {
         "SMTP_HOST": "smtp.sendgrid.net",
@@ -74,7 +74,7 @@ exports.sendmail = function(email_id, html) {
     }));
 
     mailer.sendMail({
-        from: "shiwangeesingh0@gmail.com",
+        from: "", // from email id
         to: email_id,
         subject: "success",
         template: "text",
@@ -89,12 +89,12 @@ exports.sendmail = function(email_id, html) {
     });
 }
 
-exports.sendotp = function(varification_code) {
+exports.sendotp = function (varification_code) {
     var twilio = require('twilio');
     var client = new twilio(config.accountSid, config.authToken);
     client.messages.create({
         body: "your one time password(OTP) is  " + varification_code + "  valid for 3 minutes do not disclose it",
-        to: '+919532519984', // Text this number
-        from: '(561) 316-2532' // From a valid Twilio number
+        to: '', // Text this number
+        from: '' // From a valid Twilio number
     }).then((message) => console.log(message.sid));
 }

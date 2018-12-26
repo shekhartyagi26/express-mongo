@@ -8,7 +8,7 @@ exports.parameterMissing = (res, result) => {
     res.status(constants.responseFlags.PARAMETER_MISSING).json(response);
 };
 
-exports.sendError = function(res, err) {
+exports.sendError = function (res, err) {
     let response = {
         response: err,
         message: constants.responseMessages.ERROR_IN_EXECUTION
@@ -16,7 +16,7 @@ exports.sendError = function(res, err) {
     res.status(constants.responseFlags.ERROR_IN_EXECUTION).json(response);
 }
 
-exports.success = function(res, values) {
+exports.success = function (res, values) {
     let response = {
         response: values,
         message: constants.responseMessages.ACTION_COMPLETE
@@ -24,21 +24,21 @@ exports.success = function(res, values) {
     res.status(constants.responseFlags.ACTION_COMPLETE).json(response);
 }
 
-exports.numberAlreadyExist = function(res) {
+exports.numberAlreadyExist = function (res) {
     let response = {
         response: {},
         message: constants.responseMessages.MOBILE_NUMBER_ALREADY_EXISTS
     };
     res.status(constants.responseFlags.ALREADY_EXIST).json(response);
 }
-exports.emailAlreadyExist = function(res) {
+exports.emailAlreadyExist = function (res) {
     let response = {
         response: {},
         message: constants.responseMessages.EMAIL_ALREADY_EXISTS
     };
     res.status(constants.responseFlags.ALREADY_EXIST).json(response);
 }
-exports.nodata = function(res) {
+exports.nodata = function (res) {
     let response = {
         response: {},
         message: constants.responseMessages.NO_DATA_FOUND
@@ -47,28 +47,28 @@ exports.nodata = function(res) {
     res.status(constants.responseFlags.NO_DATA_FOUND).json(response);
 
 }
-exports.idNotFound = function(res) {
+exports.idNotFound = function (res) {
     let response = {
         response: {},
         message: constants.responseMessages.ID_NOT_FOUND
     };
     res.status(constants.responseFlags.ID_NOT_FOUND).json(response);
 }
-exports.invalidData = function(res) {
+exports.invalidData = function (res) {
     let response = {
         response: {},
         message: constants.responseMessages.INVALID_DATA
     };
     res.status(constants.responseFlags.INVALID_DATA).json(response);
 }
-exports.invalidOtp = function(res) {
+exports.invalidOtp = function (res) {
     let response = {
         response: {},
         message: constants.responseMessages.OTP_NOT_MATCHED
     };
     res.status(constants.responseFlags.OTP_NOT_MATCHED).json(response);
 }
-exports.invalidAccessToken = function(res) {
+exports.invalidAccessToken = function (res) {
     let response = {
         response: {},
         message: constants.responseMessages.INVALID_ACCESS_TOKEN
@@ -76,7 +76,7 @@ exports.invalidAccessToken = function(res) {
     res.status(constants.responseFlags.INVALID_ACCESS_TOKEN).json(response);
 }
 
-exports.uploadError = function(res) {
+exports.uploadError = function (res) {
     let response = {
         response: {},
         message: constants.responseMessages.UPLOAD_ERROR
@@ -84,7 +84,7 @@ exports.uploadError = function(res) {
     res.status(constants.responseFlags.UPLOAD_ERROR).json(response);
 }
 
-exports.invalidCredential = function(res, msg) {
+exports.invalidCredential = function (res, msg) {
     let response = {
         "message": msg,
         "response": {}
