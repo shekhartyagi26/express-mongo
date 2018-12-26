@@ -1,4 +1,3 @@
-const { stringModel } = require('../model/string');
 const { appInfoModel } = require('../model/appInfo');
 const responses = require('../module/responses');
 
